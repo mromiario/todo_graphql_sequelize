@@ -17,6 +17,15 @@ const typeDefs = gql `
         UserId: ID
     }
 
+    type Holiday {
+        date: String
+        localName: String
+        name:String
+        countryCode: String
+        fixed: Boolean
+        global: Boolean
+    }
+
     type Auth {
         token: String
     }
@@ -30,6 +39,7 @@ const typeDefs = gql `
         readUser(id: ID!): User
         readTodos: [Todo]
         readTodo(id: ID!): Todo
+        getHoliday: [Holiday]
     }
 
     type Mutation {

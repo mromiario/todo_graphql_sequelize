@@ -5,7 +5,8 @@ const resolvers = {
         readUsers: ControllerUser.readUsers,
         readUser: ControllerUser.readUser,
         readTodos: ControllerTodo.readTodos,
-        readTodo: ControllerTodo.readTodo
+        readTodo: ControllerTodo.readTodo,
+        getHoliday: ControllerTodo.getHoliday
     },
     Mutation: {
         signup: ControllerUser.signup,

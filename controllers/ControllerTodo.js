@@ -1,6 +1,10 @@
 const {AuthenticationError, ForbiddenError} = require('apollo-server-express')
 const {Todo} = require('../models/')
 const error = require('../error-message')
+const redis = require('redis')
+const client = redis.createClient({detect_buffers:true})
+const axios = require('axios')
+const getHolidayCache = require('../helper/cacheHoliday')
 
 
 class ControllerTodo{
@@ -104,6 +108,21 @@ class ControllerTodo{
                 })
         }
 
+    }
+
+    static getHoliday (parent, args, context){
+        return getHolidayCache()
+        .then((reply) => {
+            if(reply){
+                return (JSON.parse(reply))
+            }else{
+                return axios.get('https://date.nager.at/api/v2/nextpublicholidays/ID')
+                .then(({data}) => {
+                    client.set('holidays', JSON.stringify(data,null,2), 'EX', 60)
+                    return data
+                })
+            }
+          })
     }
 }
 
