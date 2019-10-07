@@ -2,7 +2,7 @@
 Todo server with express, graphql, sequelize
 For running this server: 
 Pre-requisite : **nodejs, redis-server**
-
+- Config postgres database in /config/config.json
 - Create file .env with the env_template 
 
     npm install
