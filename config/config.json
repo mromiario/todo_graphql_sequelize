@@ -1,24 +1,24 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "dimas1777",
-    "database": "sribu_development",
+    "username": "",
+    "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   },
   "test": {
-    "username": "postgres",
-    "password": "dimas1777",
-    "database": "database_test",
+    "username": "",
+    "password": "",
+    "database": "",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   },
   "production": {
-    "username": "postgres",
-    "password": "dimas1777",
-    "database": "database_production",
+    "username": "",
+    "password": "",
+    "database": "d",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
